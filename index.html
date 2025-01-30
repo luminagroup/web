@@ -392,33 +392,69 @@
         }, interval);
     }
 
-    // 모바일에서만 작동하는 자동 슬라이드
-    function initMobileOrgSlider() {
+    // 모바일 자동 슬라이드 기능
+    function initMobileSliders() {
         if (window.innerWidth <= 768) {
-            const container = document.querySelector('.org-departments');
-            const items = container.querySelectorAll('.org-item');
-            let currentIndex = 0;
-
-            function slideToNext() {
-                currentIndex = (currentIndex + 1) % items.length;
-                container.scrollTo({
-                    left: items[currentIndex].offsetLeft - container.offsetLeft,
-                    behavior: 'smooth'
-                });
-            }
-
-            // 3초마다 자동 슬라이드
-            const intervalId = setInterval(slideToNext, 3000);
-
-            // 터치시 자동 슬라이드 멈춤
-            container.addEventListener('touchstart', () => clearInterval(intervalId));
+            // 조직도 슬라이더
+            initSlider('.org-departments', '.org-item');
+            // Business Areas 슬라이더
+            initSlider('.expertise-grid', '.expertise-box');
         }
     }
 
+    function initSlider(containerSelector, itemSelector) {
+        const container = document.querySelector(containerSelector);
+        const items = container.querySelectorAll(itemSelector);
+        let currentIndex = 0;
+        let isScrolling = false;
+        let scrollTimeout;
+
+        function slideToNext() {
+            if (!isScrolling) {
+                currentIndex = (currentIndex + 1) % items.length;
+                container.scrollTo({
+                    left: items[currentIndex].offsetLeft,
+                    behavior: 'smooth'
+                });
+            }
+        }
+
+        // 3초마다 자동 슬라이드
+        const intervalId = setInterval(slideToNext, 3000);
+
+        // 스크롤 시작시 자동 슬라이드 멈춤
+        container.addEventListener('touchstart', () => {
+            isScrolling = true;
+            clearInterval(intervalId);
+        });
+
+        // 스크롤 종료 5초 후 자동 슬라이드 재시작
+        container.addEventListener('touchend', () => {
+            clearTimeout(scrollTimeout);
+            scrollTimeout = setTimeout(() => {
+                isScrolling = false;
+                const newIntervalId = setInterval(slideToNext, 3000);
+                container.addEventListener('touchstart', () => {
+                    clearInterval(newIntervalId);
+                });
+            }, 5000);
+        });
+
+        // 수동 스크롤 중에도 자동 슬라이드 멈춤
+        container.addEventListener('scroll', () => {
+            isScrolling = true;
+            clearInterval(intervalId);
+            clearTimeout(scrollTimeout);
+            scrollTimeout = setTimeout(() => {
+                isScrolling = false;
+            }, 5000);
+        });
+    }
+
     // 페이지 로드시 초기화
-    document.addEventListener('DOMContentLoaded', initMobileOrgSlider);
+    document.addEventListener('DOMContentLoaded', initMobileSliders);
     // 화면 크기 변경시 재초기화
-    window.addEventListener('resize', initMobileOrgSlider);
+    window.addEventListener('resize', initMobileSliders);
     </script>
 </body>
 </html> 
