@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUMINA | Creative Advertising Agency</title>
+    <!-- Google Fonts - Pretendard -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+    <!-- CSS 파일 연결 -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">LUMINA</div>
+            <ul class="nav-links">
+                <li><a href="#home">홈</a></li>
+                <li><a href="#story">소개</a></li>
+                <li><a href="#expertise">서비스</a></li>
+                <li><a href="#works">포트폴리오</a></li>
+                <li><a href="#contact" class="contact-btn">문의하기</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- 히어로 섹션 -->
+        <section id="home" class="hero">
+            <div class="video-background">
+                <video autoplay muted loop playsinline poster="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg">
+                    <source src="https://player.vimeo.com/external/434045526.sd.mp4?s=c27eecc69a27dbc4ff2b87d38afc35f1a9e7c02d&profile_id=164&oauth2_token_id=57447761" type="video/mp4">
+                    <!-- 비디오가 로드되지 않을 경우를 위한 백업 이미지 -->
+                    <img src="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg" alt="비즈니스 미팅">
+                </video>
+                <div class="overlay"></div>
+            </div>
+            <!-- 동적 배경 요소 추가 -->
+            <div class="animated-background">
+                <div class="floating-circle"></div>
+                <div class="floating-circle"></div>
+                <div class="floating-circle"></div>
+                <div class="floating-square"></div>
+                <div class="floating-square"></div>
+            </div>
+            <div class="hero-content">
+                <div class="animated-heading">
+                    <h1 class="animate-slide-up">
+                        <span class="text-highlight">진실된 마케팅 눈부신 성과</span><br>
+                        <span class="text-highlight">성공을 위한 비즈니스 파트너</span>
+                    </h1>
+                    <p class="hero-text animate-slide-up">
+                        <span class="text-emphasis">LUMINA</span> 성공 파트너들이 함께합니다.
+                    </p>
+                    <div class="cta-buttons">
+                        <a href="#contact" class="cta-button">문의하기</a>
+                        <a href="#expertise" class="cta-button outline">서비스 살펴보기</a>
+                    </div>
+                </div>
+            </div>
+            <div class="stats-container">
+                <div class="stats-grid">
+                    <div class="stat-box">
+                        <span class="stat-number" data-target="58">0<span class="unit">개</span></span>
+                        <span class="stat-label">고객사</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-number" data-target="34">0<span class="unit">억</span></span>
+                        <span class="stat-label">누적 영업이익</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-number" data-target="8">0<span class="unit">개</span></span>
+                        <span class="stat-label">사업 분야</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-number" data-target="12">0<span class="unit">명</span></span>
+                        <span class="stat-label">임직원</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 조직도 섹션 구조 수정 -->
+        <section id="organization" class="organization">
+            <div class="org-content">
+                <div class="org-header">
+                    <h2>마케팅 전문 기업 루미나</h2>
+                    <h3>차별화된 "경쟁력"으로 보여드리겠습니다.</h3>
+                    <p class="org-desc">업계 최고의 전문가들이 만들어가는 성공 솔루션</p>
+                </div>
+                <div class="org-chart">
+                    <div class="org-departments">
+                        <div class="org-row top">
+                            <div class="org-item">
+                                <div class="org-icon">
+                                    <img src="https://cdn-icons-png.flaticon.com/512/8862/8862273.png" alt="퍼포먼스 마케팅">
+                                </div>
+                                <h4>퍼포먼스 마케팅 본부</h4>
+                                <ul class="org-details">
+                                    <li>검색광고 최적화</li>
+                                    <li>SNS 광고 운영</li>
+                                    <li>리타겟팅 전략</li>
+                                </ul>
+                            </div>
+                            <div class="org-item">
+                                <div class="org-icon">
+                                    <img src="https://cdn-icons-png.flaticon.com/512/1968/1968666.png" alt="바이럴 마케팅">
+                                </div>
+                                <h4>바이럴 마케팅 본부</h4>
+                                <ul class="org-details">
+                                    <li>인플루언서 협업</li>
+                                    <li>콘텐츠 바이럴</li>
+                                    <li>온라인 PR</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="org-row center">
+                            <div class="org-item main">
+                                <div class="org-icon">
+                                    <img src="https://cdn-icons-png.flaticon.com/512/4149/4149677.png" alt="전략 기획">
+                                </div>
+                                <h4>전략 기획 본부</h4>
+                                <ul class="org-details">
+                                    <li>마케팅 전략 수립</li>
+                                    <li>데이터 분석</li>
+                                    <li>성과 최적화</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="org-row bottom">
+                            <div class="org-item">
+                                <div class="org-icon">
+                                    <img src="https://cdn-icons-png.flaticon.com/512/6941/6941697.png" alt="인큐베이팅">
+                                </div>
+                                <h4>인큐베이팅 본부</h4>
+                                <ul class="org-details">
+                                    <li>스타트업 성장지원</li>
+                                    <li>비즈니스 컨설팅</li>
+                                    <li>투자 유치</li>
+                                </ul>
+                            </div>
+                            <div class="org-item">
+                                <div class="org-icon">
+                                    <img src="https://cdn-icons-png.flaticon.com/512/1197/1197460.png" alt="소프트웨어">
+                                </div>
+                                <h4>소프트웨어 앱/웹 개발 본부</h4>
+                                <ul class="org-details">
+                                    <li>웹/앱 개발</li>
+                                    <li>시스템 구축</li>
+                                    <li>기술 컨설팅</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Vision 섹션의 그래프 부분 수정 -->
+        <section id="vision" class="vision">
+            <div class="vision-content">
+                <div class="vision-header">
+                    <h2>Our Vision</h2>
+                    <h3>클라이언트 성장 파트너십</h3>
+                    <p class="vision-desc">LUMINA는 데이터 기반의 전략적 마케팅으로 클라이언트의 놀라운 성장을 이끌어냅니다.<br>
+                    평균 200% 이상의 매출 성장률을 달성하며, 클라이언트와 함께<br>
+                    지속 가능한 성장 파트너십을 구축해 나가고 있습니다.</p>
+                </div>
+                <div class="vision-showcase">
+                    <div class="vision-image">
+                        <img src="https://images.pexels.com/photos/7681091/pexels-photo-7681091.jpeg" alt="비전 이미지">
+                        <div class="vision-overlay"></div>
+                    </div>
+                    <div class="vision-points">
+                        <div class="vision-point">
+                            <div class="point-icon">
+                                <i class="fas fa-chart-line fa-2x"></i>
+                            </div>
+                            <h4>지속 가능한 성장</h4>
+                            <p>데이터 기반의 전략으로<br>안정적인 성장을 실현합니다</p>
+                        </div>
+                        <div class="vision-point">
+                            <div class="point-icon">
+                                <i class="fas fa-handshake fa-2x"></i>
+                            </div>
+                            <h4>신뢰할 수 있는 파트너십</h4>
+                            <p>클라이언트의 성공을 위해<br>끊임없이 도전합니다</p>
+                        </div>
+                        <div class="vision-point">
+                            <div class="point-icon">
+                                <i class="fas fa-lightbulb fa-2x"></i>
+                            </div>
+                            <h4>혁신적인 솔루션</h4>
+                            <p>차별화된 전략으로<br>새로운 가치를 창출합니다</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 브랜드 스토리 섹션 -->
+        <section id="story" class="story">
+            <div class="story-content">
+                <h2>Why LUMINA?</h2>
+                <div class="story-intro">
+                    <p class="highlight-text">디지털 시대의 새로운 기준을 만드는<br>종합 광고 마케팅 에이전시</p>
+                    <p class="sub-text">LUMINA는 데이터에 기반한 전략적 인사이트로<br>고객사의 비즈니스 성장을 이끌어냅니다.</p>
+                </div>
+                <div class="story-grid">
+                    <div class="story-box">
+                        <div class="story-number">01</div>
+                        <h3>데이터 기반 의사결정</h3>
+                        <p>정확한 데이터 분석을 통해<br>최적의 마케팅 전략을 수립합니다.</p>
+                    </div>
+                    <div class="story-box">
+                        <div class="story-number">02</div>
+                        <h3>크리에이티브 솔루션</h3>
+                        <p>차별화된 콘텐츠로<br>브랜드의 가치를 높입니다.</p>
+                    </div>
+                    <div class="story-box">
+                        <div class="story-number">03</div>
+                        <h3>통합 마케팅 전략</h3>
+                        <p>온/오프라인을 아우르는<br>통합 마케팅을 제공합니다.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 전문분야 섹션 -->
+        <section id="expertise" class="expertise">
+            <div class="expertise-content">
+                <h2>Business Areas</h2>
+                <div class="expertise-intro">
+                    <p class="highlight-text">LUMINA의 전문성으로<br>비즈니스 성장을 경험하세요</p>
+                </div>
+                <div class="expertise-grid">
+                    <!-- 퍼포먼스 마케팅 -->
+                    <div class="expertise-box">
+                        <span class="expertise-tag">퍼포먼스</span>
+                        <h3>퍼포먼스 마케팅</h3>
+                        <ul>
+                            <li>검색광고</li>
+                            <li>디스플레이광고</li>
+                            <li>쇼핑광고</li>
+                            <li>앱마케팅</li>
+                        </ul>
+                    </div>
+
+                    <!-- 바이럴 마케팅 -->
+                    <div class="expertise-box">
+                        <span class="expertise-tag">바이럴</span>
+                        <h3>바이럴 마케팅</h3>
+                        <ul>
+                            <li>인플루언서 협업</li>
+                            <li>콘텐츠 바이럴</li>
+                            <li>SNS 마케팅</li>
+                            <li>온라인 PR</li>
+                        </ul>
+                    </div>
+
+                    <!-- 크리에이티브 -->
+                    <div class="expertise-box">
+                        <span class="expertise-tag">크리에이티브</span>
+                        <h3>크리에이티브</h3>
+                        <ul>
+                            <li>브랜딩</li>
+                            <li>콘텐츠 제작</li>
+                            <li>영상 프로덕션</li>
+                            <li>디자인</li>
+                        </ul>
+                    </div>
+
+                    <!-- 데이터 분석 -->
+                    <div class="expertise-box">
+                        <span class="expertise-tag">데이터</span>
+                        <h3>데이터 분석</h3>
+                        <ul>
+                            <li>데이터 트래킹</li>
+                            <li>성과 분석</li>
+                            <li>대시보드 구축</li>
+                            <li>전략 수립</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="contact-content">
+                <h2>문의하기</h2>
+                <p class="contact-desc">프로젝트에 대해 상담하시고 싶으신가요?<br>루미나가 최적의 솔루션을 제안해드립니다.</p>
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <label for="company">회사명 *</label>
+                            <input type="text" id="company" name="company" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="name">담당자명 *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">연락처 *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">이메일 *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="budget">예산</label>
+                            <select id="budget" name="budget">
+                                <option value="">선택해주세요</option>
+                                <option value="1000">1,000만원 미만</option>
+                                <option value="3000">1,000만원 - 3,000만원</option>
+                                <option value="5000">3,000만원 - 5,000만원</option>
+                                <option value="10000">5,000만원 이상</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">문의내용 *</label>
+                            <textarea id="message" name="message" rows="5" required placeholder="프로젝트에 대해 자세히 설명해주세요."></textarea>
+                        </div>
+                        <div class="form-group privacy-check">
+                            <input type="checkbox" id="privacy" name="privacy" required>
+                            <label for="privacy">개인정보 수집 및 이용에 동의합니다.</label>
+                        </div>
+                        <button type="submit" class="submit-btn">문의하기</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <h3>LUMINA</h3>
+                <p>서울특별시 강남구 테헤란로 123</p>
+                <p>Tel: 02-123-4567</p>
+                <p>Email: contact@lumina.kr</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 LUMINA. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const numbers = entry.target.querySelectorAll('.stat-number');
+                    const duration = 2000; // 2초 동안 애니메이션
+                    const totalSteps = 60; // 총 60프레임으로 고정
+                    const interval = duration / totalSteps;
+
+                    numbers.forEach(numberElement => {
+                        const targetNumber = parseInt(numberElement.getAttribute('data-target'));
+                        const stepValue = targetNumber / totalSteps;
+                        animateNumber(numberElement, targetNumber, stepValue, interval);
+                    });
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        const statsContainer = document.querySelector('.stats-grid');
+        if (statsContainer) {
+            observer.observe(statsContainer);
+        }
+    });
+
+    function animateNumber(element, target, stepValue, interval) {
+        const unit = element.querySelector('.unit');
+        if (unit) unit.remove();
+
+        let currentValue = 0;
+        let steps = 0;
+
+        const timer = setInterval(() => {
+            steps++;
+            currentValue = Math.min(Math.round(stepValue * steps), target);
+            
+            element.textContent = currentValue;
+            if (unit) element.appendChild(unit);
+
+            if (currentValue >= target) {
+                clearInterval(timer);
+            }
+        }, interval);
+    }
+
+    // 모바일 슬라이드 기능
+    document.addEventListener('DOMContentLoaded', function() {
+        const isMobile = window.innerWidth <= 768;
+        
+        if (isMobile) {
+            initializeSlider('.org-departments', '.org-item');
+            initializeSlider('.vision-points', '.vision-point');
+            initializeSlider('.expertise-grid', '.expertise-box');
+        }
+    });
+
+    function initializeSlider(containerSelector, slideSelector) {
+        const container = document.querySelector(containerSelector);
+        const slides = container.querySelectorAll(slideSelector);
+        let currentSlide = 0;
+        
+        // 슬라이더 컨테이너 스타일 설정
+        container.style.display = 'flex';
+        container.style.overflow = 'hidden';
+        container.style.scrollBehavior = 'smooth';
+        
+        // 각 슬라이드 스타일 설정
+        slides.forEach(slide => {
+            slide.style.flex = '0 0 100%';
+            slide.style.transition = 'transform 0.5s ease';
+        });
+        
+        // 자동 슬라이드
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % slides.length;
+            container.scrollTo({
+                left: currentSlide * container.offsetWidth,
+                behavior: 'smooth'
+            });
+        }, 3000);
+    }
+    </script>
+</body>
+</html> 
