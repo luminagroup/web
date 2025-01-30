@@ -392,42 +392,33 @@
         }, interval);
     }
 
-    // 모바일 슬라이드 기능
-    document.addEventListener('DOMContentLoaded', function() {
-        const isMobile = window.innerWidth <= 768;
-        
-        if (isMobile) {
-            initializeSlider('.org-departments', '.org-item');
-            initializeSlider('.vision-points', '.vision-point');
-            initializeSlider('.expertise-grid', '.expertise-box');
-        }
-    });
+    // 모바일에서만 작동하는 자동 슬라이드
+    function initMobileOrgSlider() {
+        if (window.innerWidth <= 768) {
+            const container = document.querySelector('.org-departments');
+            const items = container.querySelectorAll('.org-item');
+            let currentIndex = 0;
 
-    function initializeSlider(containerSelector, slideSelector) {
-        const container = document.querySelector(containerSelector);
-        const slides = container.querySelectorAll(slideSelector);
-        let currentSlide = 0;
-        
-        // 슬라이더 컨테이너 스타일 설정
-        container.style.display = 'flex';
-        container.style.overflow = 'hidden';
-        container.style.scrollBehavior = 'smooth';
-        
-        // 각 슬라이드 스타일 설정
-        slides.forEach(slide => {
-            slide.style.flex = '0 0 100%';
-            slide.style.transition = 'transform 0.5s ease';
-        });
-        
-        // 자동 슬라이드
-        setInterval(() => {
-            currentSlide = (currentSlide + 1) % slides.length;
-            container.scrollTo({
-                left: currentSlide * container.offsetWidth,
-                behavior: 'smooth'
-            });
-        }, 3000);
+            function slideToNext() {
+                currentIndex = (currentIndex + 1) % items.length;
+                container.scrollTo({
+                    left: items[currentIndex].offsetLeft - container.offsetLeft,
+                    behavior: 'smooth'
+                });
+            }
+
+            // 3초마다 자동 슬라이드
+            const intervalId = setInterval(slideToNext, 3000);
+
+            // 터치시 자동 슬라이드 멈춤
+            container.addEventListener('touchstart', () => clearInterval(intervalId));
+        }
     }
+
+    // 페이지 로드시 초기화
+    document.addEventListener('DOMContentLoaded', initMobileOrgSlider);
+    // 화면 크기 변경시 재초기화
+    window.addEventListener('resize', initMobileOrgSlider);
     </script>
 </body>
 </html> 
